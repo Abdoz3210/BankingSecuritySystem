@@ -1,0 +1,14 @@
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/bin/Debug/net10.0/SecureBankServer
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/bin/Debug/net10.0/SecureBankServer.deps.json
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/bin/Debug/net10.0/SecureBankServer.runtimeconfig.json
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/bin/Debug/net10.0/SecureBankServer.dll
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/bin/Debug/net10.0/SecureBankServer.pdb
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/SecureBankServer.GeneratedMSBuildEditorConfig.editorconfig
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/SecureBankServer.AssemblyInfoInputs.cache
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/SecureBankServer.AssemblyInfo.cs
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/SecureBankServer.csproj.CoreCompileInputs.cache
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/SecureBankServer.dll
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/refint/SecureBankServer.dll
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/SecureBankServer.pdb
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/SecureBankServer.genruntimeconfig.cache
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/ref/SecureBankServer.dll
