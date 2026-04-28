@@ -1,0 +1,11 @@
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankGUI/obj/Debug/net10.0/SecureBankGUI.csproj.AssemblyReference.cache
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankGUI/obj/Debug/net10.0/Avalonia/Resources.Inputs.cache
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankGUI/obj/Debug/net10.0/Avalonia/resources
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankGUI/obj/Debug/net10.0/SecureBankGUI.GeneratedMSBuildEditorConfig.editorconfig
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankGUI/obj/Debug/net10.0/SecureBankGUI.AssemblyInfoInputs.cache
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankGUI/obj/Debug/net10.0/SecureBankGUI.AssemblyInfo.cs
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankGUI/obj/Debug/net10.0/SecureBankGUI.csproj.CoreCompileInputs.cache
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankGUI/obj/Debug/net10.0/SecureBankGUI.sourcelink.json
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankGUI/obj/Debug/net10.0/SecureBankGUI.dll
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankGUI/obj/Debug/net10.0/refint/SecureBankGUI.dll
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankGUI/obj/Debug/net10.0/SecureBankGUI.pdb
