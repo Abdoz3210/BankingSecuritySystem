@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
+namespace SecureBankGUI.Clients;
 
 class client
 {
