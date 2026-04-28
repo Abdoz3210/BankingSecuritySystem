@@ -96,7 +96,7 @@ class Server
     static void HandleBanking(Socket clientSocket)
     {
 
-        clientSocket.Send(Encoding.ASCII.GetBytes("BANKING MODE: Starting balance $" + balance));
+        clientSocket.Send(Encoding.ASCII.GetBytes("BANKING MODE: Starting balance $" + balance +"/n"+"You can DEBOSIT:--- | WITHDRAW:--- | BALANCE | EXIT"));
         while (true)
         {
             byte[] buffer = new byte[1024];
@@ -196,9 +196,55 @@ class Server
         }
 
     }
-    static string ProcessCommand(string commands)
+    static string ProcessCommand(string message)
     {
-        string cmd = commands;
+        string[] parts  = message.Split(':');
+        if (parts.Length != 2)
+        {
+            return "ERRPR: Use DEPOSIT:100 or WITHDRAW:50";
+            
+        }
+
+        string commands = parts[0].ToUpper();
+        int amount;
+
+        if (!int.TryParse(parts[1].Trim(), out amount))
+            return "ERROR: Amount must be a number";
+
+        if (amount <= 0)
+            return "ERROR: Amount must be greater than Zero";
+
+        lock (balanceLock)
+        {
+            if (commands == "DEPOSIT")
+            {
+                balance += amount;
+                return "SUCCSS: Deposited $" + amount + "> New balance: $" + balance;
+            }
+            else if (commands == "WITHDRAW")
+            {
+                if (amount > balance)
+                    return "ERROR: Insufficient funds. Balance: $"
+                        + balance;
+                balance -= amount;
+                return "SUCCESS: Withdrew $" + amount +
+                    ". New balance: $" + balance;
+            }
+            else if (commands == "BALANCE")
+            {
+                return "INFO: Current balance: $" + balance;
+            }
+            else if (commands == "EXIT")
+            {
+                return "exit";
+            }
+            else
+            {
+                return "ERROR: Unknown command.";
+            }
+        }
+
+
         return "hjhjh";
     }
     static string BuildRates()

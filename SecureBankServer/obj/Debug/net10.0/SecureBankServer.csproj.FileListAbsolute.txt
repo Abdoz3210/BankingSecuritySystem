@@ -12,3 +12,4 @@
 /home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/SecureBankServer.pdb
 /home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/SecureBankServer.genruntimeconfig.cache
 /home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/ref/SecureBankServer.dll
+/home/abdosalah/Abdos/data_commnications/BankingSecuritySystem/SecureBankServer/obj/Debug/net10.0/SecureBankServer.sourcelink.json
