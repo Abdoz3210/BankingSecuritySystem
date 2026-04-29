@@ -6,7 +6,6 @@ using System.Text;
 
 class Server
 {
-    static int balance = 1000;
     static object balanceLock = new object();
     static void Main(string[] args)
     {
@@ -56,7 +55,6 @@ class Server
         int threadId = Thread.CurrentThread.ManagedThreadId;
 
         Console.WriteLine("[Tresad " + threadId + "] Handling new client...");
-        clientSocket.Send(Encoding.ASCII.GetBytes("Welcome client on thread: " + threadId));
 
         try
         {
@@ -95,8 +93,9 @@ class Server
 
     static void HandleBanking(Socket clientSocket)
     {
+        int balance = 1000;
 
-        clientSocket.Send(Encoding.ASCII.GetBytes("BANKING MODE: Starting balance $" + balance +"/n"+"You can DEBOSIT:--- | WITHDRAW:--- | BALANCE | EXIT"));
+        clientSocket.Send(Encoding.ASCII.GetBytes("BANKING MODE: Starting balance $" + balance + "\nYou can DEPOSIT:--- | WITHDRAW:--- | BALANCE | EXIT"));
         while (true)
         {
             byte[] buffer = new byte[1024];
@@ -107,7 +106,7 @@ class Server
                 clientSocket.Send(Encoding.ASCII.GetBytes("Session ended. \nFinal BALANCE: $" + balance));
                 break;
             }
-            string reply = ProcessCommand(message);
+            string reply = ProcessCommand(message, ref balance);
             clientSocket.Send(Encoding.ASCII.GetBytes(reply));
 
         }
@@ -196,7 +195,7 @@ class Server
         }
 
     }
-    static string ProcessCommand(string message)
+    static string ProcessCommand(string message, ref int balance)
     {
         string[] parts  = message.Split(':');
         if (parts.Length != 2)
@@ -214,12 +213,11 @@ class Server
         if (amount <= 0)
             return "ERROR: Amount must be greater than Zero";
 
-        lock (balanceLock)
         {
             if (commands == "DEPOSIT")
             {
                 balance += amount;
-                return "SUCCSS: Deposited $" + amount + "> New balance: $" + balance;
+                return "SUCCESS: Deposited $" + amount + ". New balance: $" + balance;
             }
             else if (commands == "WITHDRAW")
             {

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SecureBankServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3615833aca47078d3b4ee84da9f688c382506105")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fdf8e894f9f183fadc1af1b9daf73d3ec3e09480")]
 [assembly: System.Reflection.AssemblyProductAttribute("SecureBankServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SecureBankServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

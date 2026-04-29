@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SecureBankGUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a9a0c5add46f0d8de13b36af1bb8b63725b1029")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fdf8e894f9f183fadc1af1b9daf73d3ec3e09480")]
 [assembly: System.Reflection.AssemblyProductAttribute("SecureBankGUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SecureBankGUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

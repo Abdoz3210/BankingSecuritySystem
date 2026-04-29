@@ -2,20 +2,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="SecureBankGUI.MainWindow"
         Title="SecureBank Client"
-        Width="680" Height="560"
-        MinWidth="680" MinHeight="560"
+        Width="680" Height="580"
+        MinWidth="680" MinHeight="580"
         WindowStartupLocation="CenterScreen"
-        Background="White">
+        Background="#0F0F1A"
+        RequestedThemeVariant="Dark">
 
   <DockPanel>
 
-    <!-- STATUS BAR (bottom) -->
     <Border DockPanel.Dock="Bottom"
-            Background="#F5F5F5"
-            BorderBrush="#E0E0E0"
+            Background="#1A1A2E"
+            BorderBrush="#2A2A4A"
             BorderThickness="0,1,0,0"
-            Height="38">
-      <Grid Margin="12,0">
+            Height="44">
+      <Grid Margin="16,0">
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="*"/>
           <ColumnDefinition Width="Auto"/>
@@ -23,98 +23,113 @@
         <TextBlock x:Name="lblStatus"
                    Grid.Column="0"
                    Text="● Not connected"
-                   Foreground="Gray"
+                   Foreground="#888888"
                    VerticalAlignment="Center"
                    FontSize="12"/>
         <Button x:Name="btnConnect"
                 Grid.Column="1"
                 Content="Connect"
-                Width="90" Height="26"
+                Width="100" Height="30"
                 FontSize="12"
+                Background="#185FA5"
+                Foreground="White"
                 Click="BtnConnect_Click"/>
       </Grid>
     </Border>
 
-    <!-- MAIN TAB CONTROL -->
-    <TabControl x:Name="tabControl" Margin="8">
+    <TabControl x:Name="tabControl"
+                Margin="12"
+                Background="#12121F">
 
-      <!-- ═══════════════════════════ -->
-      <!-- BANKING TAB                -->
-      <!-- ═══════════════════════════ -->
-      <TabItem Header="  Banking  ">
-        <StackPanel Margin="16" Spacing="12">
+      <TabItem Header="  Banking  " FontSize="13" Foreground="White">
+        <StackPanel Margin="16" Spacing="14" Background="#12121F">
 
-          <!-- Metric cards -->
-          <Grid ColumnDefinitions="*,*,*" Height="75">
-            <Border Grid.Column="0" Background="#F5F5F5"
-                    CornerRadius="8" Margin="0,0,8,0">
+          <Grid ColumnDefinitions="*,*,*" Height="80">
+            <Border Grid.Column="0"
+                    Background="#0D2137"
+                    BorderBrush="#185FA5"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Margin="0,0,8,0">
               <StackPanel Margin="12,10">
                 <TextBlock Text="Current balance"
-                           FontSize="11" Foreground="Gray"/>
+                           FontSize="11" Foreground="#5B9BD5"/>
                 <TextBlock x:Name="lblBalance"
                            Text="$1,000"
                            FontSize="22"
-                           Foreground="#185FA5"/>
+                           FontWeight="Bold"
+                           Foreground="#60B8FF"/>
               </StackPanel>
             </Border>
-            <Border Grid.Column="1" Background="#F5F5F5"
-                    CornerRadius="8" Margin="0,0,8,0">
+            <Border Grid.Column="1"
+                    Background="#0D2110"
+                    BorderBrush="#2E7D32"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Margin="0,0,8,0">
               <StackPanel Margin="12,10">
                 <TextBlock Text="Total deposited"
-                           FontSize="11" Foreground="Gray"/>
+                           FontSize="11" Foreground="#4CAF50"/>
                 <TextBlock x:Name="lblDeposited"
                            Text="$0"
                            FontSize="22"
-                           Foreground="#3B6D11"/>
+                           FontWeight="Bold"
+                           Foreground="#00E676"/>
               </StackPanel>
             </Border>
-            <Border Grid.Column="2" Background="#F5F5F5"
+            <Border Grid.Column="2"
+                    Background="#210D0D"
+                    BorderBrush="#C62828"
+                    BorderThickness="1"
                     CornerRadius="8">
               <StackPanel Margin="12,10">
                 <TextBlock Text="Total withdrawn"
-                           FontSize="11" Foreground="Gray"/>
+                           FontSize="11" Foreground="#EF5350"/>
                 <TextBlock x:Name="lblWithdrawn"
                            Text="$0"
                            FontSize="22"
-                           Foreground="#993C1D"/>
+                           FontWeight="Bold"
+                           Foreground="#FF5252"/>
               </StackPanel>
             </Border>
           </Grid>
 
-          <!-- Amount input + buttons -->
-          <Grid ColumnDefinitions="*,Auto,Auto" Height="50">
+          <Grid ColumnDefinitions="*,Auto,Auto" Height="40">
             <TextBox x:Name="txtAmount"
                      Grid.Column="0"
-                     Watermark="Enter amount..."
+                     PlaceholderText="Enter amount..."
                      Margin="0,0,8,0"
-                     FontSize="13"/>
+                     FontSize="13"
+                     Background="#1E1E35"
+                     Foreground="White"
+                     CaretBrush="White"/>
             <Button x:Name="btnDeposit"
                     Grid.Column="1"
                     Content="Deposit"
                     Width="100"
                     Margin="0,0,8,0"
-                    Background="#E6F1FB"
-                    Foreground="#185FA5"
+                    Background="#185FA5"
+                    Foreground="White"
                     Click="BtnDeposit_Click"/>
             <Button x:Name="btnWithdraw"
                     Grid.Column="2"
                     Content="Withdraw"
                     Width="100"
-                    Background="#FAECE7"
-                    Foreground="#993C1D"
+                    Background="#C62828"
+                    Foreground="White"
                     Click="BtnWithdraw_Click"/>
           </Grid>
 
-          <!-- Transaction log -->
           <TextBlock Text="Transaction history"
-                     FontSize="11" Foreground="Gray"/>
+                     FontSize="11" Foreground="#888888"/>
           <TextBox x:Name="rtbBankLog"
                    IsReadOnly="True"
                    AcceptsReturn="True"
-                   Height="220"
+                   Height="230"
                    FontFamily="Monospace"
                    FontSize="11"
-                   Background="#F8F8F8"
+                   Background="#0A0A15"
+                   Foreground="#00FF88"
                    TextWrapping="Wrap"
                    ScrollViewer.VerticalScrollBarVisibility="Auto"
                    Text="— Session not started. Click Connect. —&#10;"/>
@@ -122,21 +137,20 @@
         </StackPanel>
       </TabItem>
 
-      <!-- ═══════════════════════════ -->
-      <!-- CHAT TAB                   -->
-      <!-- ═══════════════════════════ -->
-      <TabItem Header="  Support Chat  ">
-        <DockPanel Margin="16">
+      <TabItem Header="  Support Chat  " FontSize="13" Foreground="White">
+        <DockPanel Margin="16" Background="#12121F">
 
-          <!-- Send area (bottom) -->
           <Grid DockPanel.Dock="Bottom"
                 ColumnDefinitions="*,Auto"
-                Margin="0,8,0,0" Height="36">
+                Margin="0,8,0,0" Height="40">
             <TextBox x:Name="txtChatMessage"
                      Grid.Column="0"
-                     Watermark="Type a message..."
+                     PlaceholderText="Type a message..."
                      Margin="0,0,8,0"
                      FontSize="13"
+                     Background="#1E1E35"
+                     Foreground="White"
+                     CaretBrush="White"
                      KeyDown="TxtChat_KeyDown"/>
             <Button x:Name="btnSendChat"
                     Grid.Column="1"
@@ -147,80 +161,104 @@
                     Click="BtnSendChat_Click"/>
           </Grid>
 
-          <!-- Chat log -->
           <TextBox x:Name="rtbChatLog"
                    IsReadOnly="True"
                    AcceptsReturn="True"
                    FontSize="12"
-                   Background="#F8F8F8"
+                   Background="#0A0A15"
+                   Foreground="#E0E0E0"
                    TextWrapping="Wrap"
                    ScrollViewer.VerticalScrollBarVisibility="Auto"
                    Text="— Connect to start chatting. —&#10;"/>
+
         </DockPanel>
       </TabItem>
 
-      <!-- ═══════════════════════════ -->
-      <!-- LIVE RATES TAB             -->
-      <!-- ═══════════════════════════ -->
-      <TabItem Header="  Live Rates  ">
-        <StackPanel Margin="16" Spacing="12">
+      <TabItem Header="  Live Rates  " FontSize="13" Foreground="White">
+        <StackPanel Margin="16" Spacing="14" Background="#12121F">
 
-          <!-- Header row -->
-          <Grid ColumnDefinitions="*,Auto">
+          <Grid ColumnDefinitions="*,Auto" Height="36">
             <TextBlock x:Name="lblLastUpdated"
                        Grid.Column="0"
                        Text="Last updated: —"
-                       Foreground="Gray"
+                       Foreground="#888888"
                        FontSize="12"
                        VerticalAlignment="Center"/>
             <Button x:Name="btnRefresh"
                     Grid.Column="1"
                     Content="Refresh Rates"
-                    Width="120"
+                    Width="130"
+                    Background="#185FA5"
+                    Foreground="White"
                     Click="BtnRefresh_Click"/>
           </Grid>
 
-          <!-- Rate cards grid -->
-          <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto"
-                ColumnSpacing="12" RowSpacing="12">
+          <Grid ColumnDefinitions="*,*"
+                RowDefinitions="Auto,Auto"
+                ColumnSpacing="12"
+                RowSpacing="12">
 
             <Border Grid.Row="0" Grid.Column="0"
-                    Background="#F5F5F5" CornerRadius="8">
+                    Background="#0D2137"
+                    BorderBrush="#185FA5"
+                    BorderThickness="1"
+                    CornerRadius="8">
               <StackPanel Margin="14,12">
                 <TextBlock Text="USD / EGP"
-                           FontSize="11" Foreground="Gray"/>
+                           FontSize="11" Foreground="#5B9BD5"/>
                 <TextBlock x:Name="lblUSD"
-                           Text="—" FontSize="26"/>
+                           Text="—"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Foreground="#60B8FF"/>
               </StackPanel>
             </Border>
 
             <Border Grid.Row="0" Grid.Column="1"
-                    Background="#F5F5F5" CornerRadius="8">
+                    Background="#0D2110"
+                    BorderBrush="#2E7D32"
+                    BorderThickness="1"
+                    CornerRadius="8">
               <StackPanel Margin="14,12">
                 <TextBlock Text="EUR / EGP"
-                           FontSize="11" Foreground="Gray"/>
+                           FontSize="11" Foreground="#4CAF50"/>
                 <TextBlock x:Name="lblEUR"
-                           Text="—" FontSize="26"/>
+                           Text="—"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Foreground="#00E676"/>
               </StackPanel>
             </Border>
 
             <Border Grid.Row="1" Grid.Column="0"
-                    Background="#F5F5F5" CornerRadius="8">
+                    Background="#210D0D"
+                    BorderBrush="#C62828"
+                    BorderThickness="1"
+                    CornerRadius="8">
               <StackPanel Margin="14,12">
                 <TextBlock Text="GBP / EGP"
-                           FontSize="11" Foreground="Gray"/>
+                           FontSize="11" Foreground="#EF5350"/>
                 <TextBlock x:Name="lblGBP"
-                           Text="—" FontSize="26"/>
+                           Text="—"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Foreground="#FF5252"/>
               </StackPanel>
             </Border>
 
             <Border Grid.Row="1" Grid.Column="1"
-                    Background="#F5F5F5" CornerRadius="8">
+                    Background="#211A0D"
+                    BorderBrush="#F9A825"
+                    BorderThickness="1"
+                    CornerRadius="8">
               <StackPanel Margin="14,12">
                 <TextBlock Text="SAR / EGP"
-                           FontSize="11" Foreground="Gray"/>
+                           FontSize="11" Foreground="#FFB300"/>
                 <TextBlock x:Name="lblSAR"
-                           Text="—" FontSize="26"/>
+                           Text="—"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Foreground="#FFD740"/>
               </StackPanel>
             </Border>
 
